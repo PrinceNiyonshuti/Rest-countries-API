@@ -31,10 +31,9 @@ async function searchCountries() {
 }
 
 const displayCountries = (data) => {
+    result.innerHTML = "";
     data.forEach((country) => {
         const { flags, name, capital, region, continents, population, currencies, languages } = country;
-        console.log(currencies,languages)
-        // result.innerHTML = "";
         const div = document.createElement("div");
         div.className = "container rounded-lg shadow-lg bg-white pb-4";
         div.innerHTML = `
@@ -45,7 +44,7 @@ const displayCountries = (data) => {
                         <p class="font-semibold">Region : <span class="text-gray-700 ">${region}</span></p>
                         <p class="font-semibold">Continent : <span class="text-gray-700 ">${continents}</span></p>
                         <p class="font-semibold">Population : <span class="text-gray-700 ">${population.toLocaleString('en')}</span></p>
-                        <p class="font-semibold">Currency Name : <span class="text-gray-700 ">${currencies.name}</span></p>
+                        <p class="font-semibold">Currency Name : <span class="text-gray-700 ">${currencies[0]}</span></p>
                         <p class="font-semibold">Symbol : <span class="text-gray-700 ">${region}</span></p>
                         <p class="font-semibold">Main Language : <span class="text-gray-700 ">${languages}</span></p>
                     </div>
