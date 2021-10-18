@@ -11,7 +11,7 @@ searchInput.addEventListener("keypress", (e) => {
 		searchCountries();
 	}
 });
-filterByRegion.addEventListener("change", getCountries);
+filterByRegion.addEventListener("change", filterCountries);
 
 let data = [];
 
@@ -32,52 +32,28 @@ async function searchCountries() {
 
 const displayCountries = (data) => {
 	data.forEach((country) => {
-		const { flags, name, population, region, capital } = country;
-		console.log(population);
-		result.innerHTML = "";
-		const div = document.createElement("div");
-		div.className = "container rounded-lg shadow-lg bg-white ";
-		div.innerHTML = `
-		            <img src="${flags.svg}" class="h-1/2 w-full rounded-tl-lg rounded-tr-lg" alt="${name.common}" />
-		            <div class="p-4">
-		                <h2 class="text-xl font-bold mb-4">${name.common}</h2>
-		                <p class="font-semibold">Population : <span class="text-gray-700 ">${population}</span></p>
-		                <p class="font-semibold">Region : <span class="text-gray-700 ">${region}</span></p>
-		                <p class="font-semibold">Capital : <span class="text-gray-700 ">${capital}</span></p>
-		            </div>
-		`;
-		result.appendChild(div);
+        // result.innerHTML = "";
+        const div = document.createElement("div");
+        div.className = "container rounded-lg shadow-lg bg-white ";
+        div.innerHTML = `
+                    <img src="${country.flags.svg}" class="h-1/2 w-full rounded-tl-lg rounded-tr-lg" alt="${country.name.common}" />
+                    <div class="p-4">
+                        <h2 class="text-xl font-bold mb-4">${country.name.common}</h2>
+                        <p class="font-semibold">Population : <span class="text-gray-700 ">${country.population}</span></p>
+                        <p class="font-semibold">Region : <span class="text-gray-700 ">${country.region}</span></p>
+                        <p class="font-semibold">Capital : <span class="text-gray-700 ">${country.capital}</span></p>
+                    </div>
+        `;
+        result.appendChild(div);
 	});
 };
 
-// async function filterCountryByRegion() {
-// 	const response = await fetch(
-// 		`https://restcountries.com/v3.1/region/${region}`
-// 	);
-// 	let data = await response.json();
-// 	console.log(data);
-// }
 
-// fetch("https://restcountries.eu/rest/v2/alpha/cn")
-// 	.then((res) => res.json())
-// 	.then((data) => initialize(data))
-// 	.catch((err) => console.log("Error:", err.message)); // (I fixed this)
-
-// // A little destructuring...
-// function initialize({
-// 	name,
-// 	capital,
-// 	callingCodes,
-// 	population,
-// 	currencies,
-// 	region,
-// }) {
-// 	console.log({
-// 		name,
-// 		capital,
-// 		callingCodes,
-// 		population,
-// 		currencies,
-// 		region,
-// 	});
-// }
+// Filter countries by region Done
+async function filterCountries() {
+	const response = await fetch(
+		`https://restcountries.com/v3.1/region/${filterByRegion.value}`
+	);
+	let data = await response.json();
+	displayCountries(data);
+}
