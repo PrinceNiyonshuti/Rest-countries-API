@@ -1,0 +1,15 @@
+{
+	"name": "js-final-project",
+	"version": "1.0.0",
+	"description": "REST Countries Api",
+	"main": "app.js",
+	"scripts": {
+		"build-tailwind": "tailwind build src/styles.css -o public/styles.css"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"tailwindcss": "^2.2.17"
+	}
+}
