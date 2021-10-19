@@ -34,6 +34,8 @@ async function searchCountries() {
 const displayCountries = (data) => {
 	result.innerHTML = "";
 	data.forEach((country) => {
+
+        // destructurin data for country
 		const {
 			flags,
 			name,
@@ -47,7 +49,6 @@ const displayCountries = (data) => {
         
         const currencyNames = currencies[Object.keys(currencies)[0]];
         lang = JSON.stringify(languages);
-        console.log(lang)
 
 		const div = document.createElement("div");
 		div.className =

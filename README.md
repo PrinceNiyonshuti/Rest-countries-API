@@ -1,6 +1,11 @@
 # Rest-countries-API
 Rest countries API
 
+## Screenshoots
+![Mobile Devices](https://lipis.github.io/flag-icon-css/flags/4x3/rw.svg)
+![Tablet Devices](https://lipis.github.io/flag-icon-css/flags/4x3/rw.svg)
+![Laptop Devices](https://lipis.github.io/flag-icon-css/flags/4x3/rw.svg)
+
 # 1. Problems and findings
 - the object which changes dynamically 
 - mapping array to get nice values still and issue for me 
