@@ -12,29 +12,34 @@
 		<title>Countries</title>
 	</head>
 
-	<body class="bg-gray-100 ">
-		<div class="bg-gray-100 dark:bg-gray-800 dark:text-white">
-            <div class="w-screen shadow-md py-6 px-3 bg-white dark:text-white mb-16">
-                <div class="flex container mx-auto">
-                    <h1 class="font-bold text-xl"> Rest countries API</h1>
+	<body class="bg-gray-100" onload="getCountries()">
+		<div class="bg-gray-100 ">			
+            <div class="flex flex-wrap overflow-hidden shadow-md py-6 px-3 bg-white  mb-16">
+                <div class="w-full overflow-hidden container mx-auto">
+                    <h1 class="font-bold text-xl"> Rest Countries API</h1>
                     <div class="ml-auto font-medium">
                     </div>
                 </div>
             </div>
-            <div class="flex container mx-auto mb-16">
-                <i class="fa fa-search my-auto -mr-9 z-10 pr-2 pl-3 py-5 rounded-md text-gray-400"></i>
-                <input type="text" id="search_input" placeholder="Search for a country..." class="pl-10 shadow-md rounded-md w-1/3" />
-                <select class="ml-auto my-2 p-2 px-5 shadow-md rounded-md font-semibold" id="filter_region">
-                    <option value=" ">Filter by Region</option>
-                    <option value="africa">Africa</option>
-                    <option value="america">America</option>
-                    <option value="asia">Asia</option>
-                    <option value="europe">Europe</option>
-                    <option value="oceania">Oceania</option>
-                </select>
-            </div>
-            <div class="container grid grid-cols-4 gap-10 mx-auto result">								
-            </div>			
+			<div class="flex flex-wrap -mx-1 overflow-hidden md:-mx-2 lg:-mx-1">
+				<div class="my-1 px-1 w-full overflow-hidden md:my-2 md:px-2 lg:my-1 lg:px-1">
+					
+					<div class="flex container mx-auto mb-16">
+						<i class="fa fa-search my-auto -mr-9 z-10 pr-2 pl-3 py-5 rounded-md text-gray-400"></i>
+						<input type="text" id="search_input" placeholder="Search for a country..." class="pl-10 p-2 shadow-md rounded-md w-1/3 dark:bg-gray-700" />
+						<select class="ml-auto my-2 p-2 shadow-md rounded-md font-medium dark:bg-gray-700" id="filter_region">
+							<option value="">Filter by Region</option>
+							<option value="africa">Africa</option>
+							<option value="america">America</option>
+							<option value="asia">Asia</option>
+							<option value="europe">Europe</option>
+							<option value="oceania">Oceania</option>
+						</select>
+					</div>		
+					<div class="flex flex-wrap px-10 result">
+					</div>
+				</div>
+			</div>
         </div>
 
 		<!-- scripts -->
