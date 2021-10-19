@@ -15,13 +15,17 @@ filterByRegion.addEventListener("change", filterCountries);
 
 let data = [];
 
-//getting all countries at the start
-async function getCountries() {
-	const response = await fetch("https://restcountries.com/v3.1/all");
-    let data = await response.json();
-	displayCountries(data);
-}
 
+function getCountries() {
+	fetch("https://restcountries.com/v3.1/all")
+	.then((response) => {
+		return response.json();
+	})
+	.then((data) => {
+		console.log(data);
+		displayCountries(data);
+	});
+}
 // Searching Country
 async function searchCountries() {
 	const response = await fetch(
@@ -33,9 +37,14 @@ async function searchCountries() {
 
 const displayCountries = (data) => {
 	result.innerHTML = "";
-	data.forEach((country) => {
+    data.forEach((country) => {
 
-        // destructurin data for country
+		// console.log(country);
+
+		// const test = country.languages.filter(l => l.name).map(l => `${l.name} (${l.iso639_2})`).join(", ");
+		// console.log(test);
+        
+        // Destructuring value for country
 		const {
 			flags,
 			name,
@@ -48,14 +57,18 @@ const displayCountries = (data) => {
         } = country;
         
         const currencyNames = currencies[Object.keys(currencies)[0]];
+
+		const langNames = languages[Object.keys(languages)[0]];
+
         lang = JSON.stringify(languages);
+        console.log(langNames);
 
 		const div = document.createElement("div");
 		div.className =
 			"w-full mb-4  sm:w-1/2 md:w-1/2 lg:w-1/4 xl:w-1/4 rounded container rounded-lg shadow-lg bg-white pb-4";
         div.innerHTML = `
                     <img src="${flags.svg}" class="h-1/2 w-full rounded-tl-lg rounded-tr-lg" alt="${name.common}" />
-                    <div class="p-4 container">
+                    <div class="p-5 h-full">
                         <h2 class="text-xl font-bold mb-4">${name.common}</h2>
                         <p class="font-semibold">Capital : <span class="text-gray-700 ">${capital}</span></p>
                         <p class="font-semibold">Region : <span class="text-gray-700 ">${region}</span></p>
@@ -63,7 +76,7 @@ const displayCountries = (data) => {
                         <p class="font-semibold">Population : <span class="text-gray-700 ">${population.toLocaleString("en")}</span></p>
                         <p class="font-semibold">Currency Name : <span class="text-gray-700 ">${currencyNames.name}</span></p>
                         <p class="font-semibold">Symbol : <span class="text-gray-700 ">${currencyNames.symbol}</span></p>
-                        <p class="font-semibold">Main Language : <span class="text-gray-700 ">...</span></p>
+                        <p class="font-semibold">Main Language : <span class="text-gray-700 ">${langNames}</span></p>
                     </div>
         `;
 		result.appendChild(div);
