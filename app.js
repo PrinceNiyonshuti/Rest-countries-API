@@ -40,9 +40,6 @@ const displayCountries = (data) => {
     data.forEach((country) => {
 
 		// console.log(country);
-
-		// const test = country.languages.filter(l => l.name).map(l => `${l.name} (${l.iso639_2})`).join(", ");
-		// console.log(test);
         
         // Destructuring value for country
 		const {
