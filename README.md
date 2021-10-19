@@ -2,9 +2,12 @@
 Rest countries API
 
 ## Screenshoots
-![Mobile Devices](https://lipis.github.io/flag-icon-css/flags/4x3/rw.svg)
-![Tablet Devices](https://lipis.github.io/flag-icon-css/flags/4x3/rw.svg)
-![Laptop Devices](https://lipis.github.io/flag-icon-css/flags/4x3/rw.svg)
+### Mobile Devices
+![Mobile Devices](https://github.com/PrinceNiyonshuti/Rest-countries-API/blob/main/screenshoots/mobile-1.png)
+### Tablet Devices
+![Tablet Devices](https://github.com/PrinceNiyonshuti/Rest-countries-API/blob/main/screenshoots/tablet-1.png)
+### Laptop Devices
+![Laptop Devices](https://github.com/PrinceNiyonshuti/Rest-countries-API/blob/main/screenshoots/laptop-desktop-1.png)
 
 # 1. Problems and findings
 - the object which changes dynamically 
