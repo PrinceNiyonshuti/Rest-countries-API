@@ -14,20 +14,21 @@
 	</head>
 
 	<body class="bg-gray-100" onload="getCountries()">
-		<div class="bg-gray-100 ">			
-            <div class="flex flex-wrap overflow-hidden shadow-md py-6 px-3 bg-white  mb-16">
-                <div class="w-full overflow-hidden container mx-auto">
-                    <h1 class="font-bold text-xl"> Rest Countries API</h1>
-                    <div class="ml-auto font-medium">
-                    </div>
-                </div>
-            </div>
+		<div class="bg-gray-100 ">
+			<div class="flex flex-wrap overflow-hidden shadow-md py-6 px-3 bg-white  mb-16">
+				<div class="w-full overflow-hidden container mx-auto">
+					<h1 class="font-bold text-xl"> Rest Countries API</h1>
+					<div class="ml-auto font-medium">
+					</div>
+				</div>
+			</div>
 			<div class="flex flex-wrap -mx-1 overflow-hidden md:-mx-2 lg:-mx-1">
-				<div class="my-1 px-1 w-full overflow-hidden md:my-2 md:px-2 lg:my-1 lg:px-1">
-					
+				<div class=" my-1 px-1 w-full overflow-hidden md:my-2 md:px-2 lg:my-1 lg:px-1">
+
 					<div class="flex container mx-auto mb-16">
 						<i class="fa fa-search my-auto -mr-9 z-10 pr-2 pl-3 py-5 rounded-md text-gray-400"></i>
-						<input type="text" id="search_input" placeholder="Search for a country by name..." class="pl-10 p-2 shadow-md rounded-md w-1/3 dark:bg-gray-700" />
+						<input type="text" id="search_input" placeholder="Search for a country by name..."
+							class="pl-10 p-2 shadow-md rounded-md w-1/3 dark:bg-gray-700" />
 						<select class="ml-auto my-2 p-2 shadow-md rounded-md font-medium " id="filter_region">
 							<option value="">Filter by Region</option>
 							<option value="africa">Africa</option>
@@ -36,19 +37,47 @@
 							<option value="europe">Europe</option>
 							<option value="oceania">Oceania</option>
 						</select>
-					</div>		
-					<div class="flex flex-wrap px-10 result">
+					</div>
+
+					<div class="container mx-auto px-6">
+						<div class="flex flex-wrap -mx-4 result">
+							<div class="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4">
+								<a href="" class="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
+									<div class="relative pb-48 overflow-hidden">
+										<img class="absolute inset-0 h-full w-full object-cover"
+											src="https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+											alt="">
+									</div>
+									<div class="p-4">
+										<h2 class="mt-2 mb-2  font-bold">Purus Ullamcorper Inceptos Nibh</h2>
+										<p class="text-sm">Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+											Donec ullamcorper nulla non metus auctor fringilla.</p>
+										<div class="mt-3 flex items-center">
+											<span class="text-sm font-semibold">ab</span>&nbsp;<span
+												class="font-bold text-xl">45,00</span>&nbsp;<span
+												class="text-sm font-semibold">€</span>
+										</div>
+									</div>
+								</a>
+							</div>
+
+							
+						</div>
+					</div>
+
+
+					<div class="flex flex-wrap px-10 result1">
 					</div>
 				</div>
 			</div>
 			<div class="flex flex-wrap overflow-hidden shadow-md py-6 px-3 bg-white ">
-                <div class="w-full overflow-hidden container mx-auto">
-                    <h1 class="font-bold text-xl text-center"> &copy; NP Prince 😊 </h1>
-                    <div class="ml-auto font-medium">
-                    </div>
-                </div>
-            </div>
-        </div>
+				<div class="w-full overflow-hidden container mx-auto">
+					<h1 class="font-bold text-xl text-center"> &copy; NP Prince 😊 </h1>
+					<div class="ml-auto font-medium">
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- scripts -->
 		<script src="app.js"></script>
