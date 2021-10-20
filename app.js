@@ -11,21 +11,24 @@ searchInput.addEventListener("keypress", (e) => {
 		searchCountries();
 	}
 });
+
 filterByRegion.addEventListener("change", filterCountries);
 
+// initialize empty array to hold country data
 let data = [];
 
 
+// getting all countries function
 function getCountries() {
 	fetch("https://restcountries.com/v3.1/all")
 	.then((response) => {
 		return response.json();
 	})
 	.then((data) => {
-		console.log(data);
 		displayCountries(data);
 	});
 }
+
 // Searching Country
 async function searchCountries() {
 	const response = await fetch(
@@ -35,13 +38,12 @@ async function searchCountries() {
 	displayCountries(data);
 }
 
+
 const displayCountries = (data) => {
 	result.innerHTML = "";
     data.forEach((country) => {
-
-		// console.log(country);
         
-        // Destructuring value for country
+        // Destructuring values for country
 		const {
 			flags,
 			name,
@@ -58,7 +60,6 @@ const displayCountries = (data) => {
 		const langNames = languages[Object.keys(languages)[0]];
 
         lang = JSON.stringify(languages);
-        console.log(langNames);
 
 		const div = document.createElement("div");
 		div.className ="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4";
@@ -68,7 +69,7 @@ const displayCountries = (data) => {
 							<img class="absolute inset-0 h-full w-full object-cover" src="${flags.svg}" alt="${name.common}">
 						</div>
 						<div class="p-4">
-							<h2 class="mt-2 mb-2 font-bold">${name.common}</h2>
+							<h2 class="mt-2 mb-2 text-xl font-bold">${name.common}</h2>
 							<p class="text-sm"></p>
 							<p class="font-semibold">Capital : <span class="text-gray-700 ">${capital}</span></p>
 							<p class="font-semibold">Region : <span class="text-gray-700 ">${region}</span></p>
@@ -84,7 +85,7 @@ const displayCountries = (data) => {
 	});
 };
 
-// Filter countries by region Done
+// Filter countries by region 
 async function filterCountries() {
 	const response = await fetch(
 		`https://restcountries.com/v3.1/region/${filterByRegion.value}`
