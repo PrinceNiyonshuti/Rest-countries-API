@@ -8,7 +8,7 @@ const result = document.querySelector(".result");
 // adding event listener
 searchInput.addEventListener("keypress", (e) => {
 	if (e.keyCode === 13) {
-		searchCountries();
+		searchCountry();
 	}
 });
 
@@ -30,7 +30,7 @@ function getCountries() {
 }
 
 // Searching Country
-async function searchCountries() {
+async function searchCountry() {
 	const response = await fetch(
 		`https://restcountries.com/v3.1/name/${searchInput.value}`
 	);
