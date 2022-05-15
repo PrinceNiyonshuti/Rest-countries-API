@@ -34,3 +34,8 @@ before running the project first initialize the project to get tailwindcss modul
  ## steps to follow 
  1. npx init 
  2. npx run build-tailwind (to rebuild the css)
+
+
+## Feedback and issues
+
+Any issue and feedback from the app don't hesitate to make an issue
