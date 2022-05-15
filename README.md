@@ -1,5 +1,6 @@
 # Rest-countries-API
-Rest countries API
+
+Rest countries API which show details about the countries and other information and you can filter to the region and other
 
 ## Screenshoots
 ### Mobile Devices
